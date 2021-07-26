@@ -1,0 +1,18 @@
+server:
+  port: 9999
+db:
+  host: 127.0.0.1:3306
+  user: root
+  passwd: Wxg@1993
+  db: test
+  conn:
+    maxidle: 50
+    maxopen: 1024
+redis:
+  addr: 127.0.0.1:6379
+  db: 1
+  passwd: ''
+  poolsize: 256
+  cache:
+    tokenexpired: 300 # token cache info expired time 5 * 60 * 60
+    userexpired: 300   # user cache info expired time  5 * 60
