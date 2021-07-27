@@ -74,6 +74,7 @@ func (s *RPCServer) Run() {
 		return
 	}
 	for {
+		// 性能问题
 		conn, err := l.Accept()
 		if err != nil {
 			log.Error.Printf("accept err: %v\n", err)
@@ -81,6 +82,7 @@ func (s *RPCServer) Run() {
 		}
 		go func() {
 			connTransport := NewTransport(conn)
+			// defer connTransport.conn.Close()
 			for {
 				// read request
 				req, err := connTransport.Read()
