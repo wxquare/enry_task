@@ -2,7 +2,8 @@
 ========================
 
 ## 工具、关键参数设置
-- [wrk](https://github.com/wg/wrk)
+- 测试机器：Macbook Pro-i7
+- 测试工具[wrk](https://github.com/wg/wrk)
 - sudo sysctl -w kern.ipc.somaxconn=2048
 - sudo sysctl -w kern.maxfiles=12288
 - ulimit -n 10000
