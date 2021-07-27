@@ -10,8 +10,9 @@
 
 ## 200 并发,使用固定用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
-
+    
 output:
+
     Running 30s test @ http://localhost:8080/login
     8 threads and 200 connections
     Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -29,6 +30,7 @@ output:
 ## 2000 并发，使用固定用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
 output:
+
     Running 30s test @ http://localhost:8080/login
     8 threads and 2000 connections
     Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -47,6 +49,7 @@ output:
 ## 200 并发，使用随机用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 output:
+
     Running 30s test @ http://localhost:8080/login
     8 threads and 200 connections
     Thread Stats   Avg      Stdev     Max   +/- Stdev
