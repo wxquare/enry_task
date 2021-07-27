@@ -1,7 +1,7 @@
 # Performance testing
 ========================
 
-## 使用工具和以及关键参数设置
+## 工具、关键参数设置
 - [wrk](https://github.com/wg/wrk)
 - sudo sysctl -w kern.ipc.somaxconn=2048
 - sudo sysctl -w kern.maxfiles=12288
@@ -11,7 +11,7 @@
 - mysql maxopen 256
 
 
-## 200 并发,使用固定用户登录
+## 测试 200并发，固定用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
     
 output:
@@ -30,7 +30,7 @@ output:
     Requests/sec:   5601.15
 Transfer/sec:      2.02MB
 
-## 2000 并发，使用固定用户登录
+## 测试 2000并发，固定用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
 
 output:
@@ -49,7 +49,7 @@ output:
     Requests/sec:   5698.29
     Transfer/sec:      2.06MB
 
-## 200 并发，使用随机用户登录
+## 测试 200并发，随机用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 
 output:
