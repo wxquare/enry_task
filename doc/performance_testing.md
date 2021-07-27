@@ -72,6 +72,7 @@ output:
 ## 2000 并发，使用随机用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 output:
+
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
     Running 30s test @ http://localhost:8080/login
     8 threads and 2000 connections
