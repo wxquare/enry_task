@@ -16,7 +16,7 @@
 
 
 ## 二、逻辑架构设计
-<div align=center>![系统框架图](https://github.com/wxquare/enry_task/blob/master/doc/images/1.png)
+<div align=center>![系统框架图](https://github.com/wxquare/enry_task/blob/master/doc/images/1.png)</div>
 
 给出整体系统架构图，包括主要模块、数据流、上下文关系。
 
