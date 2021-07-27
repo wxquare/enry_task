@@ -58,6 +58,9 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		log.Debug.Println(" -- Set token ", token, "with expire:", config.Logic.Tokenexpire)
 	}
 	log.Debug.Println(" -- Succ get response from backend with", rsp["code"], " and msg:", rsp["msg"], token)
+	if rsp["code"] != errorcode.CodeSucc{
+		log.Error.Printf("%+v\v",rsp)
+	}
 	handleRespnse(w, ret, rsp)
 }
 

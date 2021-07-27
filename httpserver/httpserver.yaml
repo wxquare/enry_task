@@ -11,6 +11,6 @@ logic:
   tokenexpire: 3600
 pool: # rcp client pool config
   initsize: 512    # init size
-  capacity: 2000   # max size
-  maxidle: 120    # connection max idle time (second)
+  capacity: 1024   # max size
+  maxidle: 60    # connection max idle time (second)
   gettimeout: 30  # max time when try to fetch connection (ms)
