@@ -18,6 +18,11 @@
 ## 二、逻辑架构设计
 ![系统框架图](https://github.com/wxquare/enry_task/blob/master/doc/images/1.png)
 
+- 用户通过浏览器向web server发送http请求，登录请求，查看用户信息、编辑用户信息
+- Webserver 接收请求，解析参数，然后构造rpc请求tcpserver
+- tcpserver 中系统的主要逻辑，负责查询db、cache鉴权，查询和写用户的信息
+
+
 给出整体系统架构图，包括主要模块、数据流、上下文关系。
 
 使用表格或者子章节的形式，描述主要模块和接口的功能；
