@@ -18,13 +18,13 @@
 ## 二、逻辑架构设计
 ![系统框架图](https://github.com/wxquare/enry_task/blob/master/doc/images/1.png)
 
-主要模块功能:
+### 主要模块功能:
 - 用户通过浏览器向web server发送http请求，登录请求，查看用户信息、编辑用户信息
 - Webserver 接收请求，解析参数，然后构造rpc请求tcpserver
 - tcpserver 中系统的主要逻辑，负责查询db、cache鉴权，查询和写用户的信息
 - mysql 存储用户的信息，redis 缓存用户信息以及token信息
 
-主要接口：
+### 主要接口：
 - login：登录接口
 - logout：退出登录
 - getuserinfo：获取用户信息
