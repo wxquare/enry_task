@@ -1,7 +1,7 @@
 # Performance testing
 ========================
 
-## 使用工具和以及关键参数设置
+## 工具、关键参数设置
 - [wrk](https://github.com/wg/wrk)
 - sudo sysctl -w kern.ipc.somaxconn=2048
 - sudo sysctl -w kern.maxfiles=12288
