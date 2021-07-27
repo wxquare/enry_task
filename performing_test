@@ -1,1 +1,0 @@
-wrk -c2000 -t8 -d30s -s --latency --timeout login.lua http://localhost:8080/login
