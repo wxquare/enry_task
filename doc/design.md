@@ -22,6 +22,14 @@
 - 用户通过浏览器向web server发送http请求，登录请求，查看用户信息、编辑用户信息
 - Webserver 接收请求，解析参数，然后构造rpc请求tcpserver
 - tcpserver 中系统的主要逻辑，负责查询db、cache鉴权，查询和写用户的信息
+- mysql 存储用户的信息，redis 缓存用户信息以及token信息
+
+主要接口：
+login：登录接口
+logout：退出登录
+getuserinfo：获取用户信息
+
+
 
 
 给出整体系统架构图，包括主要模块、数据流、上下文关系。
