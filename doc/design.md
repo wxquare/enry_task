@@ -33,9 +33,9 @@
 
 
 ## 三、核心逻辑详细设计
-可包括：
-1、用户登录的时序图
 
+###1、用户登录的时序图
+![用户登录时序图](https://github.com/wxquare/enry_task/blob/master/doc/images/2.png)
 
 2、一致性方案
 
