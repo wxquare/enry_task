@@ -11,7 +11,7 @@
 - mysql maxopen 512
 
 
-## 200 并发,使用固定用户登录
+## 测试 200并发，固定用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
     
 output:
@@ -30,7 +30,7 @@ output:
     Requests/sec:   5744.11
     Transfer/sec:      2.08MB
 
-## 2000 并发，使用固定用户登录
+## 测试 2000并发，固定用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
 
 output:
@@ -50,7 +50,7 @@ output:
     Requests/sec:   5959.22
     Transfer/sec:      2.10MB
 
-## 200 并发，使用随机用户登录
+## 测试 200并发，使用随机用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 
 output:
