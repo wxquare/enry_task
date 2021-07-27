@@ -6,6 +6,9 @@
 - sudo sysctl -w kern.ipc.somaxconn=2048
 - sudo sysctl -w kern.maxfiles=12288
 - ulimit -n 10000
+- httpserver pool size 1024
+- redis pool size 1024
+- mysql maxopen 512
 
 
 ## 200 并发,使用固定用户登录
@@ -29,6 +32,7 @@ output:
 
 ## 2000 并发，使用固定用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/fixed_user.lua http://localhost:8080/login
+
 output:
 
     Running 30s test @ http://localhost:8080/login
@@ -48,6 +52,7 @@ output:
 
 ## 200 并发，使用随机用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
+
 output:
 
     Running 30s test @ http://localhost:8080/login
@@ -66,3 +71,21 @@ output:
 
 
 ## 2000 并发，使用随机用户登录
+    wrk -t8 -c2000 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
+output:
+
+    Running 30s test @ http://localhost:8080/login
+    8 threads and 2000 connections
+    Thread Stats   Avg      Stdev     Max   +/- Stdev
+        Latency   387.87ms  279.93ms   2.00s    85.06%
+        Req/Sec   540.89    332.22     1.11k    55.94%
+    Latency Distribution
+        50%  345.02ms
+        75%  464.87ms
+        90%  575.38ms
+        99%    1.65s 
+    127496 requests in 30.09s, 25.03MB read
+    Socket errors: connect 0, read 41, write 0, timeout 4937
+    Non-2xx or 3xx responses: 23354
+    Requests/sec:   4236.84
+    Transfer/sec:    851.82KB
