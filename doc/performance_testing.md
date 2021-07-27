@@ -70,7 +70,7 @@ output:
     Transfer/sec:      1.03MB
 
 
-## 2000 并发，使用随机用户登录
+## 测试2000 并发，随机用户登录
     wrk -t8 -c2000 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 output:
 
