@@ -50,7 +50,7 @@ output:
     Requests/sec:   5959.22
     Transfer/sec:      2.10MB
 
-## 测试 200并发，使用随机用户登录
+## 测试 200并发，随机用户登录
     wrk -t8 -c200 -d30s --latency -s  ./scripts/random_user.lua http://localhost:8080/login
 
 output:
