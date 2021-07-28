@@ -38,6 +38,7 @@
 ![用户登录时序图](https://github.com/wxquare/enry_task/blob/master/doc/images/2.png)
 
 ### 2、RPC 框架的设计
+![rpc框架设计](https://github.com/wxquare/enry_task/blob/master/doc/images/3.png)
 
 ### 3、池化 设计
 
