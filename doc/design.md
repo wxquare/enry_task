@@ -67,6 +67,12 @@
   }
 ```
 ### 3、池化设计
+   为减少资源的消耗httpserver和tcpserver之间采用连接池来实现链接的复用。
+   
+- 启动tcpserver，处于监听状态
+- httpserver初始化连接池，创建初时的连接
+- httpserver请求tcpserver时，从连接池获取有效链接conn，通过该conn与tcpserver数据传输
+- 一次请求结束后，将该conn放回连接池
 
 ### 4、存储的淘汰和更新机制
 
