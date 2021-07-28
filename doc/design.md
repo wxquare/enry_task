@@ -40,7 +40,7 @@
 ### 2、RPC 框架的设计
 ![rpc框架设计](https://github.com/wxquare/enry_task/blob/master/doc/images/3.png)
 
-#### 2.1 RPC 协议
+#### RPC 通用协议
 ``` 
    // RPCdata 表示rpcclient和server之间的通用协议
   type RPCdata struct {
@@ -49,7 +49,23 @@
     Err  string        // 执行过程中的错误信息
   }
 ```
+#### RPC 数据编解码
 
+```
+  func Encode(data RPCdata) ([]byte, error) {
+    // serialize
+    var serial bytes.Buffer
+    encoder := gob.NewEncoder(&serial)
+    if err := encoder.Encode(data); err != nil {
+      return nil, err
+    }
+    // encode
+    encodeData := make([]byte, 4+len(serial.Bytes()))
+    binary.BigEndian.PutUint32(encodeData[:4], uint32(len(serial.Bytes())))
+    copy(encodeData[4:], serial.Bytes())
+    return encodeData, nil
+  }
+```
 ### 3、池化 设计
 
 ### 4、存储的淘汰和更新机制
