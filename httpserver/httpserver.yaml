@@ -12,5 +12,5 @@ logic:
 pool: # rcp client pool config
   initsize: 512    # init size
   capacity: 1024   # max size
-  maxidle: 300    # connection max idle time (second)
+  maxidle: 120    # connection max idle time (second)
   gettimeout: 120  # max time when try to fetch connection (ms)
