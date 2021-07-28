@@ -131,11 +131,10 @@
 - 浏览器访问localhost:8080 
 
 
-## 七、遗留问题与风险预估
-
-- 本次设计中rpc的设计比较简单，缺少根据service name路由。虽然通过连接池来复用链接，但是rpcserver也可能有性能问题，之后的设计中可以考虑异步实现
--
-
+参考：
+1、 https://golang.org/doc/code
+2、 https://golang.org/doc/tutorial/create-module
+3、 https://golang.org/doc/articles/wiki/
 
 
 
