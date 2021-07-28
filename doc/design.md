@@ -79,11 +79,14 @@
     rwl      sync.RWMutex  // read-write mutex
 }
 ```
-
-- 启动tcpserver，处于监听状态
-- httpserver初始化连接池，创建初时的连接
+- 系统启动时，tcpserver需要先启动，使其处于监听状态
+- httpserver初始化连接池，创建与tcpserver的连接conn
+- 链接conn存储在channel中
 - httpserver请求tcpserver时，从连接池获取有效链接conn，通过该conn与tcpserver数据传输
-- 一次请求结束后，将该conn放回连接池
+- 一次请求结束后，将该conn放回连接池conns
+- 为每个链接设置空闲时间maxIdle
+- 限制连接池的容量capacity
+
 
 ### 4、存储的淘汰和更新机制
 
