@@ -87,6 +87,22 @@
 - 为每个链接设置空闲时间maxIdle
 - 限制连接池的容量capacity
 
+## 四、存储设计
+### 数据库
+```
+  CREATE TABLE IF NOT EXISTS userinfo_tab_0 (
+    id INT(11) NOT NULL AUTO_INCREMENT COMMENT 'primary key',
+    username VARCHAR(64) NOT NULL COMMENT 'unique id',
+    nickname VARCHAR(128) NOT NULL DEFAULT '' COMMENT 'user nickname, can be empty',
+    passwd VARCHAR(32) NOT NULL COMMENT 'md5 result of real password and key',
+    skey VARCHAR(16) NOT NULL COMMENT 'secure key of each user',
+    headurl VARCHAR(128) NOT NULL DEFAULT '' COMMENT 'user headurl, can be empty',
+    uptime int(64) NOT NULL DEFAULT 0 COMMENT 'update time: unix timestamp',
+    PRIMARY KEY (id),
+    UNIQUE username_unique (username)
+  ) ENGINE = InnoDB CHARSET = utf8 COMMENT 'user info table';
+```
+
 
 ### 4、存储的淘汰和更新机制
 
