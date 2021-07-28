@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/wxquare/entry_task/conf"
-	"github.com/wxquare/entry_task/gpool"
 	"github.com/wxquare/entry_task/log"
+	gpool "github.com/wxquare/entry_task/pool"
 	pb "github.com/wxquare/entry_task/proto/user/proto"
 	"github.com/wxquare/entry_task/rpc"
 )
@@ -62,7 +62,7 @@ type clientWrap struct {
 
 // get client
 func getRPCClient() (*clientWrap, error) {
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(10*time.Millisecond))
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(30*time.Millisecond))
 	conn, err := pool.Get(ctx)
 	// call cancel to avoid leak
 	cancel()
