@@ -24,8 +24,8 @@
 - mysql 存储用户的信息，redis 缓存用户信息以及token信息
 
 ## 三、主要接口：
-- login：登录接口
-- logout：退出登录
+- http://localhost:8080/login：登录接口
+- http://localhost:8080/logout：退出登录
 - getuserinfo：获取用户信息
 - edituserinfo：编辑用户昵称
 - uploadpic：上传用户图像
