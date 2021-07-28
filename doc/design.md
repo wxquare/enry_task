@@ -88,7 +88,10 @@
 - 限制连接池的容量capacity
 
 ## 四、存储设计
-### 数据库
+
+用户登录时，从缓存查询用户信息，若成功，返回用户信息；若失败，再从db中查询用户的信息，若成功，写cache，然后返回用户信息。
+
+### mysql数据库
 ```
   CREATE TABLE IF NOT EXISTS userinfo_tab_0 (
     id INT(11) NOT NULL AUTO_INCREMENT COMMENT 'primary key',
@@ -102,6 +105,13 @@
     UNIQUE username_unique (username)
   ) ENGINE = InnoDB CHARSET = utf8 COMMENT 'user info table';
 ```
+- 用户信息表结构
+- 分表设计。一共创建20张表，根据用户username来取模来决定将用户信息存储在哪张表中
+
+#### redis缓存
+- 
+
+
 
 
 ### 4、存储的淘汰和更新机制
