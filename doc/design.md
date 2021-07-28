@@ -130,6 +130,9 @@
 - 先启动tcpserver，再启动rpcserver
 - 浏览器访问localhost:8080 
 
+## 七、性能测试
+
+- https://github.com/wxquare/enry_task/blob/master/doc/performance_testing.md
 
 参考：
 
