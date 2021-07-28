@@ -67,8 +67,19 @@
   }
 ```
 ### 3、池化设计
-   为减少资源的消耗httpserver和tcpserver之间采用连接池来实现链接的复用。
-   
+   为减少资源的消耗httpserver和tcpserver之间采用连接池来实现链接的复用，提高系统的性能
+
+```
+  type GPool struct {
+    factory  Factory       // factory method to create connection
+    conns    chan Conn     // connections' chan
+    init     uint32        // init pool size
+    capacity uint32        // max pool size
+    maxIdle  time.Duration // how long an idle connection remains open
+    rwl      sync.RWMutex  // read-write mutex
+}
+```
+
 - 启动tcpserver，处于监听状态
 - httpserver初始化连接池，创建初时的连接
 - httpserver请求tcpserver时，从连接池获取有效链接conn，通过该conn与tcpserver数据传输
