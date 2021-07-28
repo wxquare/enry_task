@@ -26,9 +26,9 @@
 ## 三、主要接口：
 - http://localhost:8080/login：登录接口
 - http://localhost:8080/logout：退出登录
-- getuserinfo：获取用户信息
-- edituserinfo：编辑用户昵称
-- uploadpic：上传用户图像
+- http://localhost:8080/getuserinfo：获取用户信息
+- http://localhost:8080/editnickname：编辑用户昵称
+- http://localhost:8080/uploadpic：上传用户图像
 
 
 ## 四、核心逻辑详细设计
