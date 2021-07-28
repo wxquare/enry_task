@@ -40,6 +40,16 @@
 ### 2、RPC 框架的设计
 ![rpc框架设计](https://github.com/wxquare/enry_task/blob/master/doc/images/3.png)
 
+#### 2.1 RPC 协议
+``` 
+   // RPCdata 表示rpcclient和server之间的通用协议
+  type RPCdata struct {
+    Name string        // 函数名称
+    Args []interface{} // 请求或者返回参数
+    Err  string        // 执行过程中的错误信息
+  }
+```
+
 ### 3、池化 设计
 
 ### 4、存储的淘汰和更新机制
